@@ -23,5 +23,4 @@ if ($dbconnect->query($sql) === TRUE) {
     $_SESSION['suc_msg_type'] = "Error";
 
 }
-print_r($_SESSION);
 header('location:addCamp.php');

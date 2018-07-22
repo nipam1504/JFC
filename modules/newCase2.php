@@ -85,7 +85,9 @@ body.modal-open .modal .modal-dialog {
                         <div class="portlet light">
                             <div class="portlet-body form">
                                 <!-- BEGIN FORM-->
-                                
+                                <?php
+                                include_once('SucFailMsg.php');
+                                ?>
 
                                 <form action="newCase2_Submit.php" id="form_sample_3"
                                       method="post" class="form-horizontal" enctype="multipart/form-data">

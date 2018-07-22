@@ -83,7 +83,9 @@ body.modal-open .modal .modal-dialog {
                     <div class="row">
                         <div class="portlet light">
                             <div class="portlet-body form">
-
+                                <?php
+                                include_once('SucFailMsg.php');
+                                ?>
 
 <div style="padding-top:100px; padding-right:300px; padding-left:300px; padding-bottom:50px;">                    
 <a class="btn btn-primary btn-block" href="newCase1.php"> <span class="glyphicon glyphicon-plus-sign"></span> Add New Case </a>

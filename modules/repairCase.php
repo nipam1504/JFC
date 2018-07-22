@@ -85,15 +85,11 @@ body.modal-open .modal .modal-dialog {
                         <div class="portlet light">
                             <div class="portlet-body form">
                                 <!-- BEGIN FORM-->
-                                <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
-
+                                <?php
+                                include_once('SucFailMsg.php');
+                                ?>
                                 <form action="" id="form_sample_3"
                                       method="post" class="form-horizontal" enctype="multipart/form-data">
-
-                                    <div class="alert alert-danger display-hide">
-                                        <button class="close" data-close="alert"></button>
-                                        You have some form errors. Please check below.
-                                    </div>
 
 
                                     <!-- radio checks -->

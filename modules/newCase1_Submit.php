@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require 'db-config.php';
 $firstName = $_REQUEST['first_name'];
 $lastName = $_REQUEST['last_name'];
@@ -29,14 +29,11 @@ $sql = "INSERT INTO user (username, gender, userdob, address, taluka, village, c
 VALUES ('$firstName', '$gender', '$dateofbirth', '$address1', '$taluka', '$village', '$city', '$district', '$state', '$country', '$phone1' , '$phone2', '$zip', '$caste' , '$gsi', '$bpl')";
 
 if ($dbconnect->query($sql) === TRUE) {
-    echo '<script language="javascript">';
-	echo 'alert("message successfully sent")';
-	echo '</script>';
+    $_SESSION['suc_msg'] = "Data submitted successfully.";
+    $_SESSION['suc_msg_type'] = "Success";
 } else {
-	echo '<script language="javascript">';
-echo 'alert("message not sent")';
-echo '</script>';
-    echo "Error: " . $sql . "<br>" . $dbconnect->error;
-}
+    $_SESSION['suc_msg'] = "Something went wrong, Please try again.";
+    $_SESSION['suc_msg_type'] = "Error";
 
-//header('location:newCase2.php');
+}
+header('location:newCase2.php');

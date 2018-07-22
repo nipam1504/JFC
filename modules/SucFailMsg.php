@@ -1,6 +1,7 @@
 <?php
 session_start();
 //print_r($_SESSION);
+
 if(isset($_SESSION['suc_msg']) && $_SESSION['suc_msg']!=''){?>
     <?php
     if(isset($_SESSION['suc_msg_type']) && $_SESSION['suc_msg_type']=='Success'){?>

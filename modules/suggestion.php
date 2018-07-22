@@ -71,10 +71,9 @@ body.modal-open .modal .modal-dialog {
         <!-- BEGIN PAGE CONTENT BODY -->
             <div class="page-content">
                 <div class="container">
-                    <div class="alert alert-success alert-dismissable">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>Success!</strong> Indicates a successful or positive action.
-                    </div>
+                    <?php
+                    include_once('SucFailMsg.php');
+                    ?>
                     <div class="page-content-inner">
                     <div class="row">
                         <div class="portlet light">

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require 'db-config.php';
 //$userid = $_REQUEST['aidRecommand'];
 $aidRecommand = $_REQUEST['aidRecommand'];
@@ -21,14 +21,11 @@ $sql = "INSERT INTO casedata (aidrecom, lateral, side, usercod, userscod, measur
 VALUES ('$aidRecommand', '$lateral', '$side', '$cause', '$subCause', '$measurement', '$measureDate', '$issueDate', '$madeBy', '$masterNumber', '$masterDate' , '$prNumber')";
 
 if ($dbconnect->query($sql) === TRUE) {
-    echo '<script language="javascript">';
-	echo 'alert("message successfully sent")';
-	echo '</script>';
+    $_SESSION['suc_msg'] = "Data submitted successfully.";
+    $_SESSION['suc_msg_type'] = "Success";
 } else {
-	echo '<script language="javascript">';
-echo 'alert("message not sent")';
-echo '</script>';
-    echo "Error: " . $sql . "<br>" . $dbconnect->error;
-}
+    $_SESSION['suc_msg'] = "Something went wrong, Please try again.";
+    $_SESSION['suc_msg_type'] = "Error";
 
+}
 header('location:selectCaseType.php');
