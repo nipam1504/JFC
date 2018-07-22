@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require 'db-config.php';
 $campName = $_REQUEST['camp_name'];
@@ -15,14 +16,12 @@ $sql = "INSERT INTO campdetails (campName, startDate, endDate, sponsorName, gran
 VALUES ('$campName', '$startDate', '$endDate', '$sponsorName', '$grantType', '$campType', '$campMode', '$campStatus')";
 
 if ($dbconnect->query($sql) === TRUE) {
-    echo '<script language="javascript">';
-	echo 'alert("message successfully sent")';
-	echo '</script>';
+    $_SESSION['suc_msg'] = "Data submitted successfully.";
+    $_SESSION['suc_msg_type'] = "Success";
 } else {
-	echo '<script language="javascript">';
-echo 'alert("message not sent")';
-echo '</script>';
-    echo "Error: " . $sql . "<br>" . $dbconnect->error;
-}
+    $_SESSION['suc_msg'] = "Something went wrong, Please try again.";
+    $_SESSION['suc_msg_type'] = "Error";
 
+}
+print_r($_SESSION);
 header('location:addCamp.php');
