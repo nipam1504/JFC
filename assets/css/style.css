@@ -1,0 +1,64 @@
+.radio-toolbar input[type="radio"] {
+    display:none;
+}
+.radio-toolbar .radio {
+    display:none;
+}
+
+.radio-toolbar label {
+    display:inline-block;
+    background-color:#ddd;
+    padding:10px 15px;
+    margin-right: 10px;
+}
+
+.portlet-title.line-border {
+    border-bottom: 2px solid #eee !important;
+}
+
+.col-md-1_5 {
+    width: 13% !important;
+}
+
+.checked-radio {
+    background: none repeat scroll 0 0 #ed6b75 !important;
+    color: #fff;
+}
+.padding-all7{
+    padding: 7px !important;
+}
+.datatable-icon{
+   
+    font-size: 22px !important;
+    padding: 0;
+    width: 22px;
+}
+
+.yellow{
+	color:#f3c200 !important;
+}
+
+.sd_player_list tr td:nth-child(3){
+	text-align: center;
+	vertical-align: middle !important;
+}
+
+.sd_team_player_list tr td:nth-child(2){
+	text-align: center;
+	vertical-align: middle !important;
+}
+
+.sd-tab-content{
+	border: 1px solid #ddd !important;
+	overflow: hidden;
+}
+
+.sd-content-text{
+	overflow-x: auto;
+}
+
+.sd-set-align-menu > li> a {
+	padding: 16px 16px 15px !important;
+}
+
+
