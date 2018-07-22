@@ -21,6 +21,8 @@
 <script src="../assets/bootstrap/js/bootstrap-dialog.js"></script>
 <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-dialog.css">
 <link rel='stylesheet prefetch' href="../assets/css/custom.css">
+    <script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 
 <script src="../assets/js/easyResponsiveTabs.js" type="text/javascript"></script>
 		    <script type="text/javascript">
@@ -86,7 +88,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">First Name</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input  name="first_name" placeholder="First Name" class="form-control"  type="text" required>
                                             </div>
                                         </div>
@@ -98,7 +99,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Last Name</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
                                             </div>
                                         </div>
@@ -108,7 +108,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Phone #1</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
                                                 <input name="phone1" placeholder="1234567890" class="form-control" type="text">
                                             </div>
                                         </div>
@@ -118,9 +117,8 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Attended By</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                 <select name="attendedBy" class="form-control selectpicker" >
-                                                    <option value=" " >Admin</option>
+                                                    <option>Admin</option>
                                                     <option>Person1</option>
                                                     <option>Person2</option>
                                                     <option >Person3</option>
@@ -133,7 +131,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Reason for no help</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
                                                 <textarea class="form-control" name="reason" placeholder="Reason for no help"></textarea>
                                             </div>
                                         </div>
@@ -143,7 +140,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Suggestion given to patient</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
                                                 <textarea class="form-control" name="suggestion" placeholder="Suggestion given to patient"></textarea>
                                             </div>
                                         </div>
@@ -172,3 +168,34 @@ body.modal-open .modal .modal-dialog {
 </div>
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        $('#form_sample_3').validate({
+            errorClass: "text-danger",
+            errorElement: "span",
+            rules: {
+                suggestion: {
+                    required:true
+                },
+                reason: "required",
+                attendedBy: "required",
+                phone1: "required",
+                last_name: "required",
+                first_name: "required"
+            },
+            messages: {
+                suggestion: {
+                    required:"Please enter suggestion."
+                },
+                reason: "Please enter reason.",
+                attendedBy: "Please enter attendedBy.",
+                phone1: "Please enter phone.",
+                last_name: "Please enter last name.",
+                first_name: "Please enter first name."
+            },
+            submitHandler: function () {
+                $('#form_sample_3').submit();
+            }
+        })
+    });
+</script>

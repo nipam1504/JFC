@@ -11,6 +11,8 @@
 
 <!-- JQUERY -->
 <script type="text/javascript" language="javascript" src="assets/media/js/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 <!-- Optional theme -->
@@ -33,23 +35,7 @@
 			    });
 				
 </script>
-    <script>
-        function validateform(){
-            var name=document.myform.user_name.value;
-            var password=document.myform.user_password.value;
-            var test=document.my
-
-            if (name==null || name==""){
-                alert("User name can't be blank");
-                return false;
-            }else if(password==null || password="" || password.length<5){
-                alert("Password can't be blank or less than 5 character");
-                return false;
-            }
-        }
-    </script>
-
-    <!-- Bootstrap modal configuration -->
+<!-- Bootstrap modal configuration -->
 <style type='text/css'>
 body.modal-open .modal {
     display: flex !important;
@@ -90,8 +76,8 @@ body.modal-open .modal .modal-dialog {
 					
 					<div class="login-top">
 						<!-- send post data to  check-login.php-->
-						<form name="myform" method="post" action="check-login.php" onsubmit="return validateform()">
-							<input type="text" class="email" name="user_name" placeholder="Username" required="" >
+						<form name="myform" id="myForm" method="post" action="check-login.php" >
+							<input type="text"  name="user_name" placeholder="User name" required="" >
 							<input type="password" class="password" name="user_password" placeholder="Password" required="" >
 									
 							<div class="login-bottom login-bottom1" align="center">
@@ -109,21 +95,40 @@ body.modal-open .modal .modal-dialog {
 		</div>		
 		<div class="clear"></div>
 	</div>
-
-	<div style="text-align:center; margin-top:10px;">
-
 <script>
-function warning_modal(){
-	BootstrapDialog.alert({
-            title: 'WARNING',
-            message: 'Invalid Username or Password!',
-            type: BootstrapDialog.TYPE_WARNING, // <-- Default value is BootstrapDialog.TYPE_PRIMARY
-            closable: true, // <-- Default value is false
-            draggable: false, // <-- Default value is false
-            buttonLabel: 'OK', // <-- Default value is 'OK',
-           
-        });
-}
+function warning_modal() {
+    BootstrapDialog.alert({
+        title: 'WARNING',
+        message: 'Invalid Username or Password!',
+        type: BootstrapDialog.TYPE_WARNING, // <-- Default value is BootstrapDialog.TYPE_PRIMARY
+        closable: true, // <-- Default value is false
+        draggable: false, // <-- Default value is false
+        buttonLabel: 'OK', // <-- Default value is 'OK',
+
+    });
+   }
+
+    $(document).ready(function () {
+        $('#myForm').validate({
+            errorClass: "text-danger",
+            errorElement: "div",
+            rules: {
+                user_name: {
+                    required:true
+                },
+                user_password: "required"
+            },
+            messages: {
+                user_name: {
+                    required:"Please enter user name."
+                },
+                user_password: "Please enter password."
+            },
+        submitHandler: function () {
+            $('#myForm').submit();
+        }
+    })
+ });
 
 </script>
 	

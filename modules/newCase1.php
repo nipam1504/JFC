@@ -33,7 +33,10 @@ array_push($stateArray, $row);
 <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-dialog.css">
 <link rel='stylesheet prefetch' href="../assets/css/custom.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js">
+    <script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
         <script src="../assets/js/easyResponsiveTabs.js" type="text/javascript"></script>
 		    <script type="text/javascript">
 
@@ -121,7 +124,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">First Name</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
                                             </div>
                                         </div>
@@ -132,7 +134,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Last Name</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
                                             </div>
                                         </div>
@@ -141,12 +142,11 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Gender</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                 <select name="gender" class="form-control selectpicker" >
-                                                    <option value=" " >Gender</option>
-                                                    <option>Male</option>
-                                                    <option>Female</option>
-                                                    <option >Third</option>
+                                                    <option>Gender</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                    <option value="Third">Third</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -157,7 +157,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Date of Birth</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input name="dob" placeholder="Date of Birth" class="form-control"  type="date">
                                             </div>
                                         </div>
@@ -167,9 +166,8 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Country</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                 <select name="country" onChange="checkOption()" class="form-control selectpicker" >
-                                                    <option value=" " >Country</option>
+                                                    <option>Country</option>
                                                     <option value="India">India</option>
                                                     <option value="Other">Other</option>
                                                 </select>
@@ -184,7 +182,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 1</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                                 <input name="address1" placeholder="Address1" class="form-control" type="text">
                                             </div>
                                         </div>
@@ -193,7 +190,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 2</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                                 <input name="address2" placeholder="Address2" class="form-control" type="text">
                                             </div>
                                         </div>
@@ -203,7 +199,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 3</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                                 <input name="address3" placeholder="Address3" class="form-control" type="text">
                                             </div>
                                         </div>
@@ -213,7 +208,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Taluka</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                                 <input name="taluka" placeholder="Taluka" class="form-control" type="text">
                                             </div>
                                         </div>
@@ -223,7 +217,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Village</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                                 <input name="village" placeholder="Village" class="form-control" type="text">
                                             </div>
                                         </div>
@@ -234,7 +227,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">City</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                                 <input name="city" placeholder="city" class="form-control"  type="text">
                                             </div>
                                         </div>
@@ -246,7 +238,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">State</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                      
                                                 <select name="state" class="form-control selectpicker" onchange="getCity(this.value)">
                                                     <option value=" " >Please select your state</option>
@@ -266,7 +257,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">District</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                                 <div id ="district">
 												<select name="district" class="form-control selectpicker" onchange="getCity(this.value)">
                                                     <option value=" " >Please select your District</option>
@@ -285,7 +275,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Zip Code</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
                                                 <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
                                             </div>
                                         </div>
@@ -295,7 +284,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Phone #1</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
                                                 <input name="phone1" placeholder="1234567890" class="form-control" type="text">
                                             </div>
                                         </div>
@@ -308,7 +296,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Phone #2</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
                                                 <input name="phone2" placeholder="1234567890" class="form-control" type="text">
                                             </div>
                                         </div>
@@ -318,9 +305,8 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Caste</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                 <select name="caste" class="form-control selectpicker" >
-                                                    <option value=" " >Caste</option>
+                                                    <option>Caste</option>
                                                     <option>General</option>
                                                     <option>OBC</option>
                                                 </select>
@@ -415,4 +401,63 @@ function getCity(id){
             $("#district").html(result);
         }});	
 }
+</script>
+<script>
+    $(document).ready(function () {
+        $('#form_sample_3').validate({
+            errorClass: "text-danger",
+            errorElement: "span",
+            rules: {
+                first_name: {
+                    required:true
+                },
+                last_name: "required",
+                gender: "required",
+                dob: "required",
+                country: "required",
+                address1: "required",
+                address2: "required",
+                address3: "required",
+                taluka: "required",
+                village: "required",
+                city: "required",
+                state: "required",
+                district: "required",
+                zip: "required",
+                phone1: "required",
+                phone2: "required",
+                caste: "required",
+                GSI: "required",
+                BPL: "required",
+                Aid: "required"
+            },
+            messages: {
+                first_name: {
+                    required:"Please enter first name."
+                },
+                last_name: "Please enter last name.",
+                gender: "Please enter gender.",
+                dob: "Please enter date of birth.",
+                country: "Please enter country.",
+                address1: "Please enter address.",
+                address2: "Please enter address.",
+                address3: "Please enter address.",
+                taluka: "Please enter taluka.",
+                village: "Please enter village.",
+                city: "Please enter city.",
+                state: "Please enter state.",
+                district: "Please enter district.",
+                zip: "Please enter zip.",
+                phone1: "Please enter phone.",
+                phone2: "Please enter phone.",
+                caste: "Please enter caste.",
+                GSI: "Please enter GSI.",
+                BPL: "Please enter BPL.",
+                Aid: "Please enter Aid."
+            },
+            submitHandler: function () {
+                $('#form_sample_3').submit();
+            }
+        })
+    });
 </script>

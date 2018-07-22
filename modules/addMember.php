@@ -20,7 +20,9 @@
 <!-- Bootstrap Dialog -->
 <script src="../assets/bootstrap/js/bootstrap-dialog.js"></script>
 <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-dialog.css">
-<link rel='stylesheet prefetch' href="../assets/css/custom.css">		
+<link rel='stylesheet prefetch' href="../assets/css/custom.css">
+    <script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 
 <script src="../assets/js/easyResponsiveTabs.js" type="text/javascript"></script>
 		    <script type="text/javascript">
@@ -100,7 +102,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Name</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
                                                 <input  name="member_name" placeholder="Member Name" class="form-control"  type="text">
                                             </div>
                                         </div>
@@ -111,13 +113,12 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Member Role</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                 <select name="member_role" class="form-control selectpicker" >
-                                                    <option value=" " >Member Role</option>
-                                                    <option>Admin</option>
-                                                    <option>Measurement By</option>
-                                                    <option>Made By</option>
-                                                    <option>Data Entry Operator</option>
+                                                    <option>Member Role</option>
+                                                    <option value="Admin">Admin</option>
+                                                    <option value="Measurement By">Measurement By</option>
+                                                    <option value="Made By">Made By</option>
+                                                    <option value="Data Entry Operator">Data Entry Operator</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -147,3 +148,26 @@ body.modal-open .modal .modal-dialog {
 </div>
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        $('#form_sample_3').validate({
+            errorClass: "text-danger",
+            errorElement: "span",
+            rules: {
+                member_name: {
+                    required:true
+                },
+                member_role: "required"
+            },
+            messages: {
+                member_name: {
+                    required:"Please enter camp name."
+                },
+                member_role: "Please enter start date."
+            },
+            submitHandler: function () {
+                $('#form_sample_3').submit();
+            }
+        })
+    });
+</script>

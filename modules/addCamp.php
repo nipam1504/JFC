@@ -20,7 +20,9 @@
 <!-- Bootstrap Dialog -->
 <script src="../assets/bootstrap/js/bootstrap-dialog.js"></script>
 <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-dialog.css">
-<link rel='stylesheet prefetch' href="../assets/css/custom.css">		
+<link rel='stylesheet prefetch' href="../assets/css/custom.css">
+<script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 
 <script src="../assets/js/easyResponsiveTabs.js" type="text/javascript"></script>
 		    <script type="text/javascript">
@@ -87,9 +89,9 @@ body.modal-open .modal .modal-dialog {
                                 <form action="addCamp_Submit.php" id="form_sample_3"
                                       method="post" class="form-horizontal" enctype="multipart/form-data">
 									
-									<div class="alert alert-success" role="alert" id="success_message" >Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+									<div style="display:none" class="alert alert-success" role="alert" id="success_message" >Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
 
-                                    <div class="alert alert-danger display-hide" >
+                                    <div style="display:none" class="alert alert-danger display-hide" >
                                         <button class="close" data-close="alert"></button>
                                         You have some form errors. Please check below.
                                     </div>
@@ -100,7 +102,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Camp Name</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input  name="camp_name" placeholder="Camp Name" class="form-control"  type="text">
                                             </div>
                                         </div>
@@ -112,7 +113,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Start Date</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input name="startDate" placeholder="Date of Birth" class="form-control"  type="date">
                                             </div>
                                         </div>
@@ -123,7 +123,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >End Date</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input name="endDate" placeholder="Date of Birth" class="form-control"  type="date">
                                             </div>
                                         </div>
@@ -134,7 +133,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Sponsor Name</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input  name="sponsor_name" placeholder="Sponsor Name" class="form-control"  type="text">
                                             </div>
                                         </div>
@@ -144,11 +142,10 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Grant Type</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                 <select name="grantType" class="form-control selectpicker" >
-                                                    <option value=" " >Grant Type</option>
-                                                    <option>India</option>
-                                                    <option>Other</option>
+                                                    <option >Grant Type</option>
+                                                    <option value="India">India</option>
+                                                    <option value="Other">Other</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -159,11 +156,10 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Camp Type</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                 <select name="campType" class="form-control selectpicker" >
-                                                    <option value=" " >Camp Type</option>
-                                                    <option>India</option>
-                                                    <option>Other</option>
+                                                    <option>Camp Type</option>
+                                                    <option value="India">India</option>
+                                                    <option value="Other">Other</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -173,11 +169,10 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Camp Mode</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                 <select name="campMode" class="form-control selectpicker" >
-                                                    <option value=" " >Camp Mode</option>
-                                                    <option>India</option>
-                                                    <option>Other</option>
+                                                    <option>Camp Mode</option>
+                                                    <option value="India">India</option>
+                                                    <option value="Other">Other</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -190,7 +185,7 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="campStatus" value="yes" /> Open
+                                                    <input type="radio" name="campStatus" value="yes" checked/> Open
                                                 </label>
                                             </div>
                                             <div class="radio">
@@ -224,3 +219,38 @@ body.modal-open .modal .modal-dialog {
 </div>
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        $('#form_sample_3').validate({
+            errorClass: "text-danger",
+            errorElement: "span",
+            rules: {
+                camp_name: {
+                    required:true
+                },
+                startDate: "required",
+                endDate: "required",
+                sponsor_name: "required",
+                grantType: "required",
+                campType: "required",
+                campMode: "required",
+                campStatus: "required"
+            },
+            messages: {
+                camp_name: {
+                    required:"Please enter camp name."
+                },
+                startDate: "Please enter start date.",
+                endDate: "Please enter end date.",
+                sponsor_name: "Please enter sponsor name.",
+                grantType: "Please enter grant type.",
+                campType: "Please enter camp type.",
+                campMode: "Please enter camp mode.",
+                campStatus: "Please enter camp Status."
+            },
+            submitHandler: function () {
+                $('#form_sample_3').submit();
+            }
+        })
+    });
+</script>

@@ -20,7 +20,9 @@
 <!-- Bootstrap Dialog -->
 <script src="../assets/bootstrap/js/bootstrap-dialog.js"></script>
 <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap-dialog.css">
-<link rel='stylesheet prefetch' href="../assets/css/custom.css">		
+<link rel='stylesheet prefetch' href="../assets/css/custom.css">
+    <script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 
 <script src="../assets/js/easyResponsiveTabs.js" type="text/javascript"></script>
 		    <script type="text/javascript">
@@ -89,13 +91,10 @@ body.modal-open .modal .modal-dialog {
                                       method="post" class="form-horizontal" enctype="multipart/form-data">
                                     <input type="hidden" name="newcaseId" value="caseid">
 
-                                
-
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Aid Recommended</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                 <select name="aidRecommand" class="form-control selectpicker" >
                                                     <option value="" >Aid type</option>
                                                     <option>Prosthesis</option>
@@ -105,8 +104,6 @@ body.modal-open .modal .modal-dialog {
                                             </div>
                                         </div>
                                     </div>
-
-
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Lateral Type</label>
@@ -144,7 +141,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Cause of Disability</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                 <select name="cause" class="form-control selectpicker" >
                                                     <option value=" " > </option>
                                                     <option>Amputation</option>
@@ -158,7 +154,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Sub-Cause of disability</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                 <select name="subCause" class="form-control selectpicker" >
                                                     <option value=" " > </option>
                                                     <option>Diabetes</option>
@@ -178,7 +173,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Measurement By</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
                                                 <select name="measurement" class="form-control selectpicker" >
                                                     <option value=" " > Admin</option>
                                                     <option>Staff1</option>
@@ -192,7 +186,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Measurement date</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input name="measureDate" placeholder="Today's date" class="form-control"  type="date">
                                             </div>
                                         </div>
@@ -202,7 +195,6 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Issue date(Suggested)</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                                 <input name="issueDate" placeholder="Today's date" class="form-control"  type="date">
                                             </div>
                                         </div>
@@ -213,7 +205,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Made By</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+
                                                 <select name="madeBy" class="form-control selectpicker" >
                                                     <option value=" " > Admin</option>
                                                     <option>Staff1</option>
@@ -226,7 +218,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Master Number</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
                                                 <input name="masterNumber" placeholder="Last Name" class="form-control"  type="text">
                                             </div>
                                         </div>
@@ -236,7 +228,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Master date</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
                                                 <input name="masterDate" placeholder="Master date" class="form-control"  type="date">
                                             </div>
                                         </div>
@@ -246,7 +238,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >OR/PR Number</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
                                                 <input name="prNumber" placeholder="B/Numeric / yyyy-yy" class="form-control"  type="text">
                                             </div>
                                         </div>
@@ -274,3 +266,45 @@ body.modal-open .modal .modal-dialog {
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#form_sample_3').validate({
+            errorClass: "text-danger",
+            errorElement: "span",
+            rules: {
+                aidRecommand: {
+                    required:true
+                },
+                lateral: "required",
+                side: "required",
+                cause: "required",
+                subCause: "required",
+                measurement: "required",
+                issueDate: "required",
+                madeBy: "required",
+                masterNumber: "required",
+                masterDate: "required",
+                prNumber: "required"
+            },
+            messages: {
+                aidRecommand: {
+                    required:"Please enter aid recommand."
+                },
+                lateral: "Please enter lateral.",
+                side: "Please enter side.",
+                cause: "Please enter cause.",
+                subCause: "Please enter sub cause.",
+                measurement: "Please enter measurement.",
+                issueDate: "Please enter issue date.",
+                madeBy: "Please enter made by.",
+                masterNumber: "Please enter master number.",
+                masterDate: "Please enter master date.",
+                prNumber: "Please enter PR Number."
+            },
+            submitHandler: function () {
+                $('#form_sample_3').submit();
+            }
+        })
+    });
+</script>
