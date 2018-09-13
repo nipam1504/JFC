@@ -87,11 +87,14 @@ body.modal-open .modal .modal-dialog {
                                 <!-- BEGIN FORM-->
                                 <?php
                                 include_once('SucFailMsg.php');
+								$caseKey = substr($_SESSION['camp_name'],0,3).date('dmy').(rand(99999, 999999));
                                 ?>
+								<div class="alert alert-info" role="alert">Case Key for this case is: <?php echo $caseKey;?></div>
 
                                 <form action="newCase2_Submit.php" id="form_sample_3"
                                       method="post" class="form-horizontal" enctype="multipart/form-data">
                                     <input type="hidden" name="newcaseId" value="caseid">
+                                    <input type="hidden" name="caseKey" value=$caseKey>
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Aid Recommended</label>
@@ -217,11 +220,11 @@ body.modal-open .modal .modal-dialog {
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label" >Master Number</label>
+                                        <label class="col-md-4 control-label" >Center Master Number</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
 
-                                                <input name="masterNumber" placeholder="Last Name" class="form-control"  type="text">
+                                                <input name="masterNumber" placeholder="Center Master Number" class="form-control"  type="text">
                                             </div>
                                         </div>
                                     </div>

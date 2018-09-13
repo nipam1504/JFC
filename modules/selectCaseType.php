@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -87,7 +88,7 @@ body.modal-open .modal .modal-dialog {
                                 include_once('SucFailMsg.php');
                                 ?>
 
-<div style="padding-top:100px; padding-right:300px; padding-left:300px; padding-bottom:50px;">                    
+<div style="padding-top:100px; padding-right:300px; padding-left:300px; padding-bottom:50px; min-height:70px">                    
 <a class="btn btn-primary btn-block" href="newCase1.php"> <span class="glyphicon glyphicon-plus-sign"></span> Add New Case </a>
 </div>
 
@@ -105,3 +106,9 @@ body.modal-open .modal .modal-dialog {
 </div>
 </body>
 </html>
+
+<?php
+
+$_SESSION['camp_id'] = isset($_REQUEST['camp'])?$_REQUEST['camp']:0;
+
+?>

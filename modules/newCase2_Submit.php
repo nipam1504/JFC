@@ -14,11 +14,12 @@ $madeBy = $_REQUEST['madeBy'];
 $masterNumber = $_REQUEST['masterNumber'];
 $masterDate = $_REQUEST['masterDate'];
 $prNumber = $_REQUEST['prNumber'];
+$caseKey = substr($_SESSION['camp_name'],0,3).date('dmy').(rand(99999, 999999));
 
 
 
-$sql = "INSERT INTO casedata (aidrecom, lateral, side, usercod, userscod, measureby, measuredate, issuedate, madeby, masternum, masterdate, orprnum)
-VALUES ('$aidRecommand', '$lateral', '$side', '$cause', '$subCause', '$measurement', '$measureDate', '$issueDate', '$madeBy', '$masterNumber', '$masterDate' , '$prNumber')";
+$sql = "INSERT INTO casedata (aidrecom, lateral, side, usercod, userscod, measureby, measuredate, issuedate, madeby, masternum, masterdate, orprnum,case_key)
+VALUES ('$aidRecommand', '$lateral', '$side', '$cause', '$subCause', '$measurement', '$measureDate', '$issueDate', '$madeBy', '$masterNumber', '$masterDate' , '$prNumber','$caseKey')";
 
 if ($dbconnect->query($sql) === TRUE) {
     $_SESSION['suc_msg'] = "Data submitted successfully.";
@@ -28,4 +29,5 @@ if ($dbconnect->query($sql) === TRUE) {
     $_SESSION['suc_msg_type'] = "Error";
 
 }
+
 header('location:selectCaseType.php');

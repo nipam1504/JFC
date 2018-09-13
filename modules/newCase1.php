@@ -8,6 +8,8 @@ while($row = $result->fetch_assoc())
 {
 array_push($stateArray, $row);
 }
+
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -108,11 +110,31 @@ body.modal-open .modal .modal-dialog {
                                 <!-- BEGIN FORM-->
                                 <?php
                                 include_once('SucFailMsg.php');
+							
+								
+								$campid = $_SESSION['camp_id']; 
+								$campQuery = "Select campName from campdetails where camp_id = $campid";
+								$campData = $dbconnect->query($campQuery);
+								$campName = "Base Camp";
+								while($row1 = $campData->fetch_assoc()) {
+									$campName = $row1['campName'];
+								}
+								$_SESSION['camp_name'] = $campName;
+								
+							
+
                                 ?>
+								
+							
+									<div class="text-center control-label text-info">
+                                        <h3>Your selected camp is <?php echo $campName;?> <h3>
+										
+                                    </div>							
                                 <form action="newCase1_Submit.php" id="form_sample_3"
                                       method="post" class="form-horizontal" enctype="multipart/form-data">
 
 
+							
                                     <!-- Text input-->
 
                                     <div class="form-group">
@@ -161,7 +183,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Country</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <select name="country" onChange="checkOption()" class="form-control selectpicker" >
+                                                <select name="country"  id="country" onChange="changetextbox();" class="form-control selectpicker" >
                                                     <option>Country</option>
                                                     <option value="India">India</option>
                                                     <option value="Other">Other</option>
@@ -177,7 +199,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 1</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="address1" placeholder="Address1" class="form-control" type="text">
+                                                <input name="address1" id="address1" placeholder="Address1" class="form-control" type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -315,17 +337,24 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="GSI" value="yes" /> Yes
+                                                    <input type="radio" name="GSI" value="yes" onclick="document.getElementById('gsinum').removeAttribute('disabled');" /> Yes
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="GSI" value="no" /> No
+                                                    <input type="radio" name="GSI" value="no" onclick="document.getElementById('gsinum').setAttribute('disabled', true);"/> No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-
+									<div class="form-group">
+                                        <label class="col-md-4 control-label">GSI Card number</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <input  name="gsi_num" id="gsinum" class="form-control"  type="text">
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!-- Text area -->
                                     <!-- radio checks -->
                                     <div class="form-group">
@@ -333,17 +362,24 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="BPL" value="yes" /> Yes
+                                                    <input type="radio" name="BPL" value="yes"onclick="document.getElementById('bplnum').removeAttribute('disabled');" /> Yes
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="BPL" value="no" /> No
+                                                    <input type="radio" name="BPL" value="no" onclick="document.getElementById('bplnum').setAttribute('disabled', true);"/> No
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
-
+									<div class="form-group">
+                                        <label class="col-md-4 control-label">BPL Card number</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <input  name="bplnum" id="bplnum" class="form-control"  type="text">
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <!-- radio checks -->
                                     <div class="form-group">
@@ -395,6 +431,14 @@ function getCity(id){
 		success: function(result){
             $("#district").html(result);
         }});	
+}
+function changetextbox()
+{
+    if (document.getElementById("country").value === "Other") {
+        document.getElementById("address1").setAttribute('disabled', true);
+    } else {
+        document.getElementById("address1").disable='false';
+    }
 }
 </script>
 <script>

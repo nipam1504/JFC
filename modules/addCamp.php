@@ -129,9 +129,11 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Sponsor Name</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input  name="sponsor_name" placeholder="Sponsor Name" class="form-control"  type="text">
+                                                <input  name="sponsors_name" placeholder="Sponsor Name" class="form-control"  type="text">
                                             </div>
                                         </div>
+									
+										<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Add New Sponsor</button>
                                     </div>
 
                                     <div class="form-group">
@@ -174,7 +176,6 @@ body.modal-open .modal .modal-dialog {
                                         </div>
                                     </div>
 
-
                                     <!-- radio checks -->
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Camp Status</label>
@@ -208,13 +209,35 @@ body.modal-open .modal .modal-dialog {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
 </body>
 </html>
+									<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Sponsor</h4>
+      </div>
+      <div class="modal-body">
+          <input name="sponsor_name" id="sponsor_name" placeholder="Sponsor Name" class="form-control"  type="text">
+<span id="sponser_name_error" class="text-danger"></span>
+		  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-default" id='addSponser'>Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 <script>
     $(document).ready(function () {
         $('#form_sample_3').validate({
@@ -249,4 +272,22 @@ body.modal-open .modal .modal-dialog {
             }
         })
     });
+	
+	$('#addSponser').click(()=>{
+			let sponserName = $('#sponsor_name').val();
+			if(sponserName == ''){
+				$('#sponser_name_error').text("Please enter sponser name.");
+			}
+			else{
+				$('#sponser_name_error').text("");
+				$.ajax({
+					url: "addSponser.php",
+					type:"POST",
+					data:{"sponser_name":sponserName},
+					success: function(html){
+					console.log(html)
+					  }
+					});
+			}
+	})
 </script>

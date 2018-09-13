@@ -13,7 +13,7 @@ $taluka = $_REQUEST['taluka'];
 $village = $_REQUEST['village'];
 $city = $_REQUEST['city'];
 $state = $_REQUEST['state'];
-$district = $_REQUEST['district1'];
+$district = $_REQUEST['district'];
 $city = $_REQUEST['city'];
 $zip = $_REQUEST['zip'];
 $phone1 = $_REQUEST['phone1'];
@@ -24,8 +24,7 @@ $bpl = $_REQUEST['BPL'];
 $aidtogive = $_REQUEST['Aid'];
 
 
-
-$sql = "INSERT INTO user (username, gender, userdob, address, taluka, village, city, district, state, country, userphone1, userphone2, zipcode, caste, gsi, bpl)
+ $sql = "INSERT INTO user (username, gender, userdob, address, taluka, village, city, district, state, country, userphone1, userphone2, zipcode, caste, gsi, bpl)
 VALUES ('$firstName', '$gender', '$dateofbirth', '$address1', '$taluka', '$village', '$city', '$district', '$state', '$country', '$phone1' , '$phone2', '$zip', '$caste' , '$gsi', '$bpl')";
 
 if ($dbconnect->query($sql) === TRUE) {
