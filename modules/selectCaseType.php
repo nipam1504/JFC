@@ -108,7 +108,12 @@ body.modal-open .modal .modal-dialog {
 </html>
 
 <?php
-
-$_SESSION['camp_id'] = isset($_REQUEST['camp'])?$_REQUEST['camp']:0;
-
+if(isset($_REQUEST['camp']) && $_REQUEST['camp'] >0){
+    $_SESSION['camp_id'] =  $_REQUEST['camp'];
+}else if(($_SESSION['camp_id']) && $_SESSION['camp_id'] >0){
+    $_SESSION['camp_id'] = $_SESSION['camp_id'];
+}
+else{
+    $_SESSION['camp_id'] = 0;
+}
 ?>

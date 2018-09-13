@@ -98,13 +98,23 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="hosting" value="yes" /> Yes
+                                                    <input type="radio" name="hosting" value="yes" onChange="getTextBox(1)" /> Yes
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="hosting" value="no" /> No
+                                                    <input type="radio" name="hosting" value="no" onChange="getTextBox(0)" /> No
                                                 </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group" id="casekey" style="display: none">
+                                        <label class="col-md-4 control-label" >BMVSS Case Key</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <input name="case_key" placeholder="Case Key" class="form-control"  type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -652,4 +662,13 @@ body.modal-open .modal .modal-dialog {
             }
         })
     });
+    function getTextBox(val) {
+        console.log("here", val)
+        if(val == 1){
+            $('#casekey').show();
+        }else{
+            $('#casekey').hide();
+        }
+
+    }
 </script>
