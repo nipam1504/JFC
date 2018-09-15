@@ -1004,8 +1004,8 @@ INSERT INTO `member` (`member_id`, `membername`, `memberrole`) VALUES
 CREATE TABLE `sponser` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime NOT NULL ,
+  `updated_at` datetime NOT NULL ,
   `status` varchar(30) NOT NULL DEFAULT 'Active'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 

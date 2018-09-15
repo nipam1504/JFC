@@ -114,7 +114,12 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >BMVSS Case Key</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="case_key" placeholder="Case Key" class="form-control"  type="text">
+                                                <input name="case_key" placeholder="Case Key" id="case_key" class="form-control"  type="text">
+                                            </div>
+                                        </div>
+										<div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <input name="search_case" value="Search Case" class="form-control"  type="Button" onClick="searchCase();">
                                             </div>
                                         </div>
                                     </div>
@@ -396,7 +401,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Aid Recommended</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <select name="Aid" class="form-control selectpicker" >
+                                                <select name="Aid" id="Aid" class="form-control selectpicker" >
                                                     <option>Aid type</option>
                                                     <option>Prosthesis</option>
                                                     <option>Orthosis</option>
@@ -669,6 +674,26 @@ body.modal-open .modal .modal-dialog {
         }else{
             $('#casekey').hide();
         }
+
+    }
+	function searchCase(val) {
+		let searchText = $('#case_key').val();
+		$.ajax({
+        url:"searchCaseAjax.php",
+        type:"POST",
+        data:{
+          searchText: searchText,
+        },
+        success:function(response) {
+			console.log(response);
+          
+         $('#Aid').val("Prosthesis");
+       },
+       error:function(){
+        alert("error");
+       }
+
+      });
 
     }
 </script>
