@@ -141,9 +141,11 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
                                                 <select name="grantType" class="form-control selectpicker" >
-                                                    <option >Grant Type</option>
-                                                    <option value="India">India</option>
-                                                    <option value="Other">Other</option>
+                                                    <option >NA</option>
+                                                    <option value="India">ADIP Complete</option>
+                                                    <option value="Other">ADIP Partial</option>
+                                                    <option value="Other">CSR Complete</option>
+                                                    <option value="Other">ADIP Partial</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -155,9 +157,8 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
                                                 <select name="campType" class="form-control selectpicker" >
-                                                    <option>Camp Type</option>
-                                                    <option value="India">India</option>
-                                                    <option value="Other">Other</option>
+                                                    <option>Assessment Camp</option>
+                                                    <option value="India">Fitness Distribution Camp</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -168,9 +169,8 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
                                                 <select name="campMode" class="form-control selectpicker" >
-                                                    <option>Camp Mode</option>
-                                                    <option value="India">India</option>
-                                                    <option value="Other">Other</option>
+                                                    <option>Open Workshop</option>
+                                                    <option value="India">Mobile Van</option>
                                                 </select>
                                             </div>
                                         </div>

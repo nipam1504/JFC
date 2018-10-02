@@ -74,7 +74,7 @@ body.modal-open .modal .modal-dialog {
                             <i class="fa fa-circle"></i>
                         </li>
                         <li>
-                            <span>Add Camp</span>
+                            <span>Add Member</span>
                         </li>
                     </ul>
                 <!-- END PAGE BREADCRUMBS -->
@@ -109,17 +109,25 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Member Role</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <select name="member_role" class="form-control selectpicker" >
+                                                <select name="member_role" id="member_role" onchange="changetextbox()" class="form-control selectpicker" >
                                                     <option>Member Role</option>
-                                                    <option value="Admin">Admin</option>
-                                                    <option value="Measurement By">Measurement By</option>
-                                                    <option value="Made By">Made By</option>
-                                                    <option value="Data Entry Operator">Data Entry Operator</option>
+                                                    <option value="admin">Admin</option>
+                                                    <option value="measureby">Measurement By</option>
+                                                    <option value="madeby">Made By</option>
+                                                    <option value="member">Data Entry Operator</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Password</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
 
+                                                <input  name="member_password" id="memberpassword" placeholder="Member Password" class="form-control"  type="text">
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <!-- Success message -->
                                     <!-- Button -->
@@ -166,4 +174,16 @@ body.modal-open .modal .modal-dialog {
             }
         })
     });
+
+    function changetextbox()
+    {
+        if (document.getElementById("member_role").value === "measureby" ) {
+            document.getElementById("memberpassword").setAttribute('disabled', true);
+
+        } else {
+            document.getElementById("memberpassword").enable = 'true';
+          
+        }
+
+    }
 </script>

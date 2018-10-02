@@ -4,11 +4,11 @@
     <list default="true" id="d12b00ae-dbc0-4745-a690-7f2fb6ff552b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/addCamp.php" afterPath="$PROJECT_DIR$/modules/addCamp.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/newCase1.php" afterPath="$PROJECT_DIR$/modules/newCase1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/newCase1_Submit.php" afterPath="$PROJECT_DIR$/modules/newCase1_Submit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/newCase2.php" afterPath="$PROJECT_DIR$/modules/newCase2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/newCase2_Submit.php" afterPath="$PROJECT_DIR$/modules/newCase2_Submit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/selectCaseType.php" afterPath="$PROJECT_DIR$/modules/selectCaseType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/addMember.php" afterPath="$PROJECT_DIR$/modules/addMember.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/addMember_Submit.php" afterPath="$PROJECT_DIR$/modules/addMember_Submit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/repairCase.php" afterPath="$PROJECT_DIR$/modules/repairCase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/session_page/admin/index.php" afterPath="$PROJECT_DIR$/session_page/admin/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/session_page/member/index.php" afterPath="$PROJECT_DIR$/session_page/member/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,15 +19,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="newCase2_Submit.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/modules/newCase2_Submit.php">
+      <file leaf-file-name="addMember.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/addMember.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1536828967313" expanded="true" signature="613:945" ph="INSERT INTO casedata... " />
-                <marker date="1536828967313" expanded="true" signature="943:945" ph="INSERT INTO casedata... " />
-              </folding>
+            <state relative-caret-position="536">
+              <caret line="184" column="10" lean-forward="false" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,13 +59,16 @@
         <option value="$PROJECT_DIR$/session_page/admin/header.php" />
         <option value="$PROJECT_DIR$/modules/suggestion.php" />
         <option value="$PROJECT_DIR$/modules/getCityAjax.php" />
-        <option value="$PROJECT_DIR$/session_page/admin/index.php" />
-        <option value="$PROJECT_DIR$/modules/addMember.php" />
-        <option value="$PROJECT_DIR$/modules/addMember_Submit.php" />
         <option value="$PROJECT_DIR$/modules/newCase1.php" />
         <option value="$PROJECT_DIR$/assets/css/validation.css" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/modules/newCase2_Submit.php" />
+        <option value="$PROJECT_DIR$/modules/addCamp.php" />
+        <option value="$PROJECT_DIR$/modules/repairCase.php" />
+        <option value="$PROJECT_DIR$/session_page/admin/index.php" />
+        <option value="$PROJECT_DIR$/session_page/member/index.php" />
+        <option value="$PROJECT_DIR$/modules/addMember_Submit.php" />
+        <option value="$PROJECT_DIR$/modules/addMember.php" />
       </list>
     </option>
   </component>
@@ -101,6 +101,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -113,12 +115,27 @@
               <item name="JaipurFootCenter" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="JaipurFootCenter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JaipurFootCenter" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="session_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="JaipurFootCenter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JaipurFootCenter" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="session_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="JaipurFootCenter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JaipurFootCenter" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="session_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="member" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -169,24 +186,26 @@
       <workItem from="1535200977009" duration="52000" />
       <workItem from="1536822960766" duration="328000" />
       <workItem from="1536829597017" duration="45000" />
+      <workItem from="1538462613485" duration="6012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21989000" />
+    <option name="totallyTimeSpent" value="28001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20364584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -209,46 +228,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modules/newCase2_Submit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1536828967313" expanded="true" signature="613:945" ph="INSERT INTO casedata... " />
-            <marker date="1536828967313" expanded="true" signature="943:945" ph="INSERT INTO casedata... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/newCase2_Submit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1536828967313" expanded="true" signature="613:945" ph="INSERT INTO casedata... " />
-            <marker date="1536828967313" expanded="true" signature="943:945" ph="INSERT INTO casedata... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/newCase2_Submit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1536828967313" expanded="true" signature="613:945" ph="INSERT INTO casedata... " />
-            <marker date="1536828967313" expanded="true" signature="943:945" ph="INSERT INTO casedata... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/addMember_Submit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2800">
@@ -452,13 +431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/session_page/admin/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1175">
@@ -487,13 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/session_page/admin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="14" column="138" lean-forward="false" selection-start-line="14" selection-start-column="138" selection-end-line="14" selection-end-column="138" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/db-config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -502,41 +467,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/validation.css" />
-    <entry file="file://$PROJECT_DIR$/modules/newCase1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/addMember.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="101" column="56" lean-forward="false" selection-start-line="101" selection-start-column="56" selection-end-line="101" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/addMember_Submit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/check-login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="50" column="1" lean-forward="true" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/newCase2_Submit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -545,6 +475,139 @@
             <marker date="1536828967313" expanded="true" signature="613:945" ph="INSERT INTO casedata... " />
             <marker date="1536828967313" expanded="true" signature="943:945" ph="INSERT INTO casedata... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/addSponser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1535204775712" expanded="true" signature="92:153" ph="INSERT INTO sponser... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/searchCaseAjax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1536904324218" expanded="true" signature="78:194" ph="Select u.*,c... casedata" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/repairCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="695" column="8" lean-forward="true" selection-start-line="695" selection-start-column="8" selection-end-line="695" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/selectCamp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2675">
+          <caret line="107" column="86" lean-forward="true" selection-start-line="107" selection-start-column="86" selection-end-line="107" selection-end-column="86" />
+          <folding>
+            <marker date="1517071026518" expanded="true" signature="40:65" ph="SELECT * FRO... campdetails" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session_page/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/session_page/member/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/newCase1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="439" column="9" lean-forward="false" selection-start-line="439" selection-start-column="9" selection-end-line="439" selection-end-column="9" />
+          <folding>
+            <marker date="1536828514992" expanded="true" signature="40:76" ph="Select * fro... state" />
+            <marker date="1536828514992" expanded="true" signature="4314:4363" ph="Select campN... campdetails" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/addCamp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="23" column="58" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/selectCaseType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="117" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/addMember_Submit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+          <folding>
+            <marker date="1538476174986" expanded="true" signature="216:327" ph="INSERT INTO member... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="102" column="33" lean-forward="true" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check-login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="50" column="1" lean-forward="true" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+          <folding>
+            <marker date="1482067205162" expanded="true" signature="142:425" ph="SELECT user_... login_users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/addMember.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="184" column="10" lean-forward="false" selection-start-line="184" selection-start-column="10" selection-end-line="184" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>

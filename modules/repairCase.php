@@ -447,7 +447,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Cause of Disability</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <select name="cause" class="form-control selectpicker" >
+                                                <select name="cause" id="cause" class="form-control selectpicker" >
                                                     <option value=" " > </option>
                                                     <option>Amputation</option>
                                                     <option>Non-amputation</option>
@@ -686,8 +686,10 @@ body.modal-open .modal .modal-dialog {
         },
         success:function(response) {
 			console.log(response);
-          
-         $('#Aid').val("Prosthesis");
+            var obj = JSON.parse(response);
+         $('#Aid').val(obj.aidrecom);
+         $('#cause').val(obj.usercod);
+         console.log(obj.aidrecom);
        },
        error:function(){
         alert("error");

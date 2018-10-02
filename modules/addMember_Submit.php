@@ -3,9 +3,10 @@ session_start();
 require 'db-config.php';
 $memberName = $_REQUEST['member_name'];
 $memberRole = $_REQUEST['member_role'];
+$memberPassword = $_REQUEST['member_password'];
+$newpass=md5($memberPassword);
 
-
-$sql = "INSERT INTO member (membername, memberrole) VALUES ('$memberName', '$memberRole')";
+$sql = "INSERT INTO login_users (user_name, user_level, user_password) VALUES ('$memberName', '$memberRole','$newpass')";
 
 
 if ($dbconnect->query($sql) === TRUE) {

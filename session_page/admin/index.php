@@ -1,6 +1,15 @@
 <?php
 
-include_once ('header.php')
+include_once ('header.php');
+$_SESSION['camp_id'] = 0;
+if(isset($_REQUEST['camp']) && $_REQUEST['camp'] >0){
+    $_SESSION['camp_id'] =  $_REQUEST['camp'];
+}else if(($_SESSION['camp_id']) && $_SESSION['camp_id'] >0){
+    $_SESSION['camp_id'] = $_SESSION['camp_id'];
+}
+else{
+    $_SESSION['camp_id'] = 0;
+}
 ?>
 <div style="padding-top:100px; padding-right:300px; padding-left:300px; padding-bottom:50px;">
 <a class="btn btn-primary btn-block" href="./../../modules/selectCaseType.php"> <span class="glyphicon glyphicon-home"></span> Base Center </a>
