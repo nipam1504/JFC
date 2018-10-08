@@ -38,7 +38,7 @@ if ( !isset($_SESSION['user_login']) ||
         <a class="navbar-brand" href="#">Home </a>
         <a class="navbar-brand" href="../../modules/reportOptions.php">Reports</a>
         <a class="navbar-brand" href="#">Camps</a>
-        <a class="navbar-brand" href="#">Search</a>
+        <a class="navbar-brand" href="../../modules/searchCaseKey.php">Search</a>
         <a class="btn btn-sm btn-info logout" href="./../../logout.php"> <span class="glyphicon glyphicon-off align-right"></span> &nbsp; Logout </a>
 
     </div>

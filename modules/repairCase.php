@@ -129,7 +129,7 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
 
-                                                <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+                                                <input  name="first_name" id="first_name" placeholder="First Name" class="form-control"  type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -140,7 +140,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Last Name</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+                                                <input name="last_name" id="last_name" placeholder="Last Name" class="form-control"  type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -148,7 +148,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Gender</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <select name="gender" class="form-control selectpicker" >
+                                                <select name="gender" id="gender" class="form-control selectpicker" >
                                                     <option value=" " >Gender</option>
                                                     <option>Male</option>
                                                     <option>Female</option>
@@ -163,7 +163,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Date of Birth</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="dob" placeholder="Date of Birth" class="form-control"  type="date">
+                                                <input name="dob" id="dob" placeholder="Date of Birth" class="form-control"  type="date">
                                             </div>
                                         </div>
                                     </div>
@@ -172,7 +172,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Country</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <select name="country" class="form-control selectpicker" >
+                                                <select name="country" id="country" class="form-control selectpicker" >
                                                     <option>Country</option>
                                                     <option>India</option>
                                                     <option>Other</option>
@@ -188,7 +188,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 1</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="address1" placeholder="Address1" class="form-control" type="text">
+                                                <input name="address1" id="address1" placeholder="Address1" class="form-control" type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -196,7 +196,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 2</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="address2" placeholder="Address2" class="form-control" type="text">
+                                                <input name="address2" id="address2" placeholder="Address2" class="form-control" type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -205,7 +205,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 3</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="address3" placeholder="Address3" class="form-control" type="text">
+                                                <input name="address3" id="address3" placeholder="Address3" class="form-control" type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -214,7 +214,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Taluka</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="taluka" placeholder="Taluka" class="form-control" type="text">
+                                                <input name="taluka" id="taluka" placeholder="Taluka" class="form-control" type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -223,7 +223,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Village</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="village" placeholder="Village" class="form-control" type="text">
+                                                <input name="village" id="village" placeholder="Village" class="form-control" type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -233,7 +233,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">City</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="city" placeholder="city" class="form-control"  type="text">
+                                                <input name="city" id="city" placeholder="city" class="form-control"  type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -242,7 +242,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">District</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="district" placeholder="District" class="form-control" type="text">
+                                                <input name="district" id="district" placeholder="District" class="form-control" type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -256,7 +256,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">State</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <select name="state" class="form-control selectpicker" >
+                                                <select name="state" id="state" class="form-control selectpicker" >
                                                     <option value=" " >Please select your state</option>
                                                     <option>Alabama</option>
                                                     <option>Alaska</option>
@@ -321,7 +321,7 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
 
-                                                <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
+                                                <input name="zip" id="zip" placeholder="Zip Code" class="form-control"  type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -331,7 +331,7 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
 
-                                                <input name="phone1" placeholder="1234567890" class="form-control" type="text">
+                                                <input name="phone1" id="phone1" placeholder="1234567890" class="form-control" type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -344,7 +344,7 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
 
-                                                <input name="phone2" placeholder="1234567890" class="form-control" type="text">
+                                                <input name="phone2" id="phone2" placeholder="1234567890" class="form-control" type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -353,7 +353,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Caste</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <select name="caste" class="form-control selectpicker" >
+                                                <select name="caste" id="caste" class="form-control selectpicker" >
                                                     <option value=" " >Caste</option>
                                                     <option>General</option>
                                                     <option>OBC</option>
@@ -368,12 +368,12 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="GSI" value="yes" /> Yes
+                                                    <input type="radio" name="GSI" id="GSI" value="yes" /> Yes
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="GSI" value="no" /> No
+                                                    <input type="radio" name="GSI" id="GSI" value="no" /> No
                                                 </label>
                                             </div>
                                         </div>
@@ -386,12 +386,12 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="BPL" value="yes" /> Yes
+                                                    <input type="radio" name="BPL" id="BPL" value="yes" /> Yes
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="BPL" value="no" /> No
+                                                    <input type="radio" name="BPL" id="BPL" value="no" /> No
                                                 </label>
                                             </div>
                                         </div>
@@ -416,12 +416,12 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="lateral" value="uni" /> Unilateral
+                                                    <input type="radio" name="lateral" id="lateral" value="uni" /> Unilateral
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="lateral" value="bi" /> Bilateral
+                                                    <input type="radio" name="lateral" id="lateral" value="bi" /> Bilateral
                                                 </label>
                                             </div>
                                         </div>
@@ -432,12 +432,12 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4">
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="side" value="left" /> Left
+                                                    <input type="radio" name="side" id="side" value="left" /> Left
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="side" value="right" /> Right
+                                                    <input type="radio" name="side" id="side" value="right" /> Right
                                                 </label>
                                             </div>
                                         </div>
@@ -460,7 +460,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Sub-Cause of disability</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <select name="subCause" class="form-control selectpicker" >
+                                                <select name="subCause" id="subCause" class="form-control selectpicker" >
                                                     <option value=" " > </option>
                                                     <option>Diabetes</option>
                                                     <option>Leprosy</option>
@@ -479,7 +479,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Cause of Repair</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <select name="repairCause" class="form-control selectpicker" >
+                                                <select name="repairCause" id="repairCause" class="form-control selectpicker" >
                                                     <option> Cause 1</option>
                                                     <option>Cause 2</option>
                                                     <option>Cause 3</option>
@@ -543,7 +543,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Master Number</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="masterNumber" placeholder="Last Name" class="form-control"  type="text">
+                                                <input name="masterNumber" placeholder="Master Number" class="form-control"  type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -689,6 +689,28 @@ body.modal-open .modal .modal-dialog {
             var obj = JSON.parse(response);
          $('#Aid').val(obj.aidrecom);
          $('#cause').val(obj.usercod);
+         $('#first_name').val(obj.username);
+            $('#last_name').val(obj.aidrecom);
+            $('#gender').val(obj.gender);
+            $('#dob').val(obj.userdob);
+            $('#country').val(obj.country);
+            $('#address1').val(obj.address);
+            $('#address2').val(obj.address);
+            $('#address3').val(obj.address);
+            $('#taluka').val(obj.taluka);
+            $('#village').val(obj.village);
+            $('#city').val(obj.city);
+            $('#district').val(obj.district);
+            $('#state').val(obj.state);
+            $('#zip').val(obj.zip);
+            $('#phone1').val(obj.userphone1);
+            $('#phone2').val(obj.userphone2);
+            $('#GSI').val(obj.gsi);
+            $('#caste').val(obj.caste);
+            $('#BPL').val(obj.bpl);
+            $('#lateral').val(obj.lateral);
+            $('#side').val(obj.side);
+            $('#subCause').val(obj.userscod);
          console.log(obj.aidrecom);
        },
        error:function(){
