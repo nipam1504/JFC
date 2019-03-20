@@ -1,3 +1,21 @@
+<?php
+require 'db-config.php';
+
+$sqlmeasureby = "SELECT `user_name` FROM `login_users`";
+$resultm = $dbconnect->query($sqlmeasureby);
+$measurebyArray = array();
+while($row = $resultm->fetch_assoc())
+{
+    array_push($measurebyArray, $row);
+}
+$sql = "Select * from state where status = 1";
+$result = $dbconnect->query($sql);
+$stateArray = array();
+while($row = $result->fetch_assoc())
+{
+    array_push($stateArray, $row);
+}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -88,10 +106,8 @@ body.modal-open .modal .modal-dialog {
                                 <?php
                                 include_once('SucFailMsg.php');
                                 ?>
-                                <form action="" id="form_sample_3"
+                                <form action="repairCase_Submit.php" id="form_sample_3"
                                       method="post" class="form-horizontal" enctype="multipart/form-data">
-
-
                                     <!-- radio checks -->
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">BMVSS Case</label>
@@ -127,10 +143,7 @@ body.modal-open .modal .modal-dialog {
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">First Name</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
-
-                                                <input  name="first_name" id="first_name" placeholder="First Name" class="form-control"  type="text">
-                                            </div>
+                                            <input  name="first_name" id="first_name" placeholder="First Name" class="form-control">
                                         </div>
                                     </div>
 
@@ -139,9 +152,9 @@ body.modal-open .modal .modal-dialog {
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" >Last Name</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
-                                                <input name="last_name" id="last_name" placeholder="Last Name" class="form-control"  type="text">
-                                            </div>
+
+                                                <input name="last_name" id="last_name" placeholder="Last Name" class="form-control">
+
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -149,10 +162,10 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
                                                 <select name="gender" id="gender" class="form-control selectpicker" >
-                                                    <option value=" " >Gender</option>
-                                                    <option>Male</option>
-                                                    <option>Female</option>
-                                                    <option >Third</option>
+                                                    <option>Gender</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                    <option value="Third">Third</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -162,9 +175,9 @@ body.modal-open .modal .modal-dialog {
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" >Date of Birth</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
+
                                                 <input name="dob" id="dob" placeholder="Date of Birth" class="form-control"  type="date">
-                                            </div>
+
                                         </div>
                                     </div>
 
@@ -172,10 +185,9 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Country</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <select name="country" id="country" class="form-control selectpicker" >
-                                                    <option>Country</option>
-                                                    <option>India</option>
-                                                    <option>Other</option>
+                                                <select name="country"  id="country" onChange="changetextbox();" class="form-control selectpicker" >
+                                                    <option value="India">India</option>
+                                                    <option value="Other">Other</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -187,44 +199,44 @@ body.modal-open .modal .modal-dialog {
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Address 1</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
+
                                                 <input name="address1" id="address1" placeholder="Address1" class="form-control" type="text">
-                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Address 2</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
+
                                                 <input name="address2" id="address2" placeholder="Address2" class="form-control" type="text">
-                                            </div>
+
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Address 3</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
+
                                                 <input name="address3" id="address3" placeholder="Address3" class="form-control" type="text">
-                                            </div>
+
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Taluka</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
+
                                                 <input name="taluka" id="taluka" placeholder="Taluka" class="form-control" type="text">
-                                            </div>
+
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Village</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
+
                                                 <input name="village" id="village" placeholder="Village" class="form-control" type="text">
-                                            </div>
+
                                         </div>
                                     </div>
 
@@ -232,8 +244,27 @@ body.modal-open .modal .modal-dialog {
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">City</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
+
                                                 <input name="city" id="city" placeholder="city" class="form-control"  type="text">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">State</label>
+                                        <div class="col-md-4 selectContainer">
+                                            <div class="input-group">
+
+                                                <select name="state" id="state" class="form-control selectpicker" onchange="getCity(this.value)">
+                                                    <option value=" " >Please select your state</option>
+                                                    <?php
+                                                    foreach($stateArray as $state){
+                                                        ?>
+                                                        <option value=<?php echo $state['id']?>><?php echo $state['stateName']?></option>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -242,97 +273,33 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">District</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="district" id="district" placeholder="District" class="form-control" type="text">
+                                                <div id ="district">
+                                                    <select name="district" id="distri" class="form-control selectpicker" onchange="getCity(this.value)">
+                                                        <option value=" " >Please select your District</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- Text input-->
-
-
-                                    <!-- Select Basic -->
-
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">State</label>
-                                        <div class="col-md-4 selectContainer">
-                                            <div class="input-group">
-                                                <select name="state" id="state" class="form-control selectpicker" >
-                                                    <option value=" " >Please select your state</option>
-                                                    <option>Alabama</option>
-                                                    <option>Alaska</option>
-                                                    <option >Arizona</option>
-                                                    <option >Arkansas</option>
-                                                    <option >California</option>
-                                                    <option >Colorado</option>
-                                                    <option >Connecticut</option>
-                                                    <option >Delaware</option>
-                                                    <option >District of Columbia</option>
-                                                    <option> Florida</option>
-                                                    <option >Georgia</option>
-                                                    <option >Hawaii</option>
-                                                    <option >daho</option>
-                                                    <option >Illinois</option>
-                                                    <option >Indiana</option>
-                                                    <option >Iowa</option>
-                                                    <option> Kansas</option>
-                                                    <option >Kentucky</option>
-                                                    <option >Louisiana</option>
-                                                    <option>Maine</option>
-                                                    <option >Maryland</option>
-                                                    <option> Mass</option>
-                                                    <option >Michigan</option>
-                                                    <option >Minnesota</option>
-                                                    <option>Mississippi</option>
-                                                    <option>Missouri</option>
-                                                    <option>Montana</option>
-                                                    <option>Nebraska</option>
-                                                    <option>Nevada</option>
-                                                    <option>New Hampshire</option>
-                                                    <option>New Jersey</option>
-                                                    <option>New Mexico</option>
-                                                    <option>New York</option>
-                                                    <option>North Carolina</option>
-                                                    <option>North Dakota</option>
-                                                    <option>Ohio</option>
-                                                    <option>Oklahoma</option>
-                                                    <option>Oregon</option>
-                                                    <option>Pennsylvania</option>
-                                                    <option>Rhode Island</option>
-                                                    <option>South Carolina</option>
-                                                    <option>South Dakota</option>
-                                                    <option>Tennessee</option>
-                                                    <option>Texas</option>
-                                                    <option> Uttah</option>
-                                                    <option>Vermont</option>
-                                                    <option>Virginia</option>
-                                                    <option >Washington</option>
-                                                    <option >West Virginia</option>
-                                                    <option>Wisconsin</option>
-                                                    <option >Wyoming</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Text input-->
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Zip Code</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
+
 
                                                 <input name="zip" id="zip" placeholder="Zip Code" class="form-control"  type="text">
-                                            </div>
+
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Phone #1</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
+
 
                                                 <input name="phone1" id="phone1" placeholder="1234567890" class="form-control" type="text">
-                                            </div>
+
                                         </div>
                                     </div>
 
@@ -342,10 +309,7 @@ body.modal-open .modal .modal-dialog {
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Phone #2</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
-
                                                 <input name="phone2" id="phone2" placeholder="1234567890" class="form-control" type="text">
-                                            </div>
                                         </div>
                                     </div>
 
@@ -354,58 +318,54 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
                                                 <select name="caste" id="caste" class="form-control selectpicker" >
-                                                    <option value=" " >Caste</option>
                                                     <option>General</option>
                                                     <option>OBC</option>
+                                                    <option>SC</option>
+                                                    <option>ST</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
-
                                     <!-- radio checks -->
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">GSI reference avaialble?</label>
-                                        <div class="col-md-4">
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="GSI" id="GSI" value="yes" /> Yes
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="GSI" id="GSI" value="no" /> No
-                                                </label>
-                                            </div>
+                                        <label class="col-md-4 control-label">GSI</label>
+
+                                            <div class="col-md-4 inputGroupContainer">
+
+
+                                                    <input name="gsi" id="GSI" class="form-control" type="text"/>
+
+
                                         </div>
                                     </div>
 
                                     <!-- Text area -->
                                     <!-- radio checks -->
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">BPL card availble?</label>
-                                        <div class="col-md-4">
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="BPL" id="BPL" value="yes" /> Yes
-                                                </label>
+                                        <label class="col-md-4 control-label">BPL Card</label>
+
+                                            <div class="col-md-4 inputGroupContainer">
+                                                    <input name="BPL" id="BPL" class="form-control" type="text"/>
                                             </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="BPL" id="BPL" value="no" /> No
-                                                </label>
-                                            </div>
-                                        </div>
+
                                     </div>
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Aid Recommended</label>
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
-                                                <select name="Aid" id="Aid" class="form-control selectpicker" >
-                                                    <option>Aid type</option>
-                                                    <option>Prosthesis</option>
-                                                    <option>Orthosis</option>
-                                                    <option >Earning Support</option>
+                                                <select name="aidRecommand" id="Aid"  class="form-control selectpicker">
+                                                    <option value="AK">AK-Prosthesis</option>
+                                                    <option value="BK">BK-Prosthesis</option>
+                                                    <option value="AFO">AFO-Orthosis</option>
+                                                    <option value="KAFO">KAFO-Orthosis</option>
+                                                    <option value="HKAFO">HKAFO-Orthosis</option>
+                                                    <option value="AC">AC-Mobility Support</option>
+                                                    <option value="WC">WC-Mobility Support</option>
+                                                    <option value="TC">TC-Mobility Support</option>
+                                                    <option value="Blind_Stick">Blind Stick-Mobility Support</option>
+                                                    <option value="Sewing_Machine">Sewing Machine-Earning Support</option>
+                                                    <option value="HA">HA-Hearing Aid</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -445,9 +405,9 @@ body.modal-open .modal .modal-dialog {
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Cause of Disability</label>
-                                        <div class="col-md-4 selectContainer">
+                                        <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <select name="cause" id="cause" class="form-control selectpicker" >
+                                                <select name="cause" id="cause" class="form-control " >
                                                     <option value=" " > </option>
                                                     <option>Amputation</option>
                                                     <option>Non-amputation</option>
@@ -458,9 +418,9 @@ body.modal-open .modal .modal-dialog {
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Sub-Cause of disability</label>
-                                        <div class="col-md-4 selectContainer">
+                                        <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <select name="subCause" id="subCause" class="form-control selectpicker" >
+                                                <select name="subCause" id="subCause" class="form-control " >
                                                     <option value=" " > </option>
                                                     <option>Diabetes</option>
                                                     <option>Leprosy</option>
@@ -477,12 +437,16 @@ body.modal-open .modal .modal-dialog {
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Cause of Repair</label>
-                                        <div class="col-md-4 selectContainer">
+                                        <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <select name="repairCause" id="repairCause" class="form-control selectpicker" >
-                                                    <option> Cause 1</option>
-                                                    <option>Cause 2</option>
-                                                    <option>Cause 3</option>
+                                                <select name="repairCause" id="repairCause" class="form-control " >
+                                                    <option>Wear & tear from use</option>
+                                                    <option>Screw / Rivet loose</option>
+                                                    <option>AFO Button loose / broken</option>
+                                                    <option>Stump shrinkage</option>
+                                                    <option>Making defect</option>
+                                                    <option>Other</option>
+
                                                 </select>
                                             </div>
                                         </div>
@@ -491,12 +455,16 @@ body.modal-open .modal .modal-dialog {
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Repair by</label>
-                                        <div class="col-md-4 selectContainer">
+                                        <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <select name="repairBy" class="form-control selectpicker" >
-                                                    <option value=" " > Person 1</option>
-                                                    <option>Person 2</option>
-                                                    <option>Person 3</option>
+                                                <select name="repairBy" class="form-control " >
+                                                    <?php
+                                                    foreach($measurebyArray as $mba){
+                                                        ?>
+                                                        <option value=<?php echo $mba['user_name']?>><?php echo $mba['user_name']?></option>
+                                                        <?php
+                                                    }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -506,7 +474,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Repair date</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="repairDate" placeholder="Today's date" class="form-control"  type="date">
+                                                <input name="repairDate" value="<?php echo date('Y-m-d'); ?>" class="form-control"  type="date">
                                             </div>
                                         </div>
                                     </div>
@@ -515,11 +483,45 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Repair work done</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="repairDateDone" placeholder=" " class="form-control"  type="text">
+                                                <textarea name="repairWorkInfo" placeholder=" " class="form-control">
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Documents Given</label>
+                                        <div class="col-md-4">
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="proofyn" value="yes" onChange="getDocBox(1)" /> Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="proofyn" value="no" onChange="getDocBox(0)" /> No
+                                                </label>
                                             </div>
                                         </div>
                                     </div>
 
+
+                                    <div class="form-group" id="doclist" style="display: none">
+                                        <label class="col-md-4 control-label" >Documents</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="">Identity Proof</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="">Disability Certificate</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="">Pre Photo</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input type="checkbox" value="">Post Photo</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" >Repair Master number</label>
                                         <div class="col-md-4 inputGroupContainer">
@@ -538,25 +540,8 @@ body.modal-open .modal .modal-dialog {
                                         </div>
                                     </div>
                                     <!-- Text input-->
-
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" >Master Number</label>
-                                        <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
-                                                <input name="masterNumber" placeholder="Master Number" class="form-control"  type="text">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" >Master date</label>
-                                        <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
-
-                                                <input name="masterDate" placeholder="Master date" class="form-control"  type="date">
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <input type="hidden" name="case_num" id="case_num"/>
+                                    <input type="hidden" name="userid" id="userid"/>
                                     <!-- Button -->
                                     <div class="form-group">
                                         <label class="col-md-5 control-label"></label>
@@ -580,6 +565,40 @@ body.modal-open .modal .modal-dialog {
 </body>
 </html>
 <script>
+    function getCity(id){
+        $.ajax({
+            url: "getCityAjax.php",
+            method:"POST",
+            data:{"id":id},
+            success: function(result){
+                $("#district").html(result);
+            }});
+    }
+    function changetextbox()
+    {
+        if (document.getElementById("country").value === "Other") {
+            document.getElementById("address1").setAttribute('disabled', true);
+            document.getElementById("address2").setAttribute('disabled', true);
+            document.getElementById("address3").setAttribute('disabled', true);
+            document.getElementById("taluka").setAttribute('disabled', true);
+            document.getElementById("village").setAttribute('disabled', true);
+            document.getElementById("zipcode").setAttribute('disabled', true);
+            document.getElementById("city").setAttribute('disabled', true);
+            document.getElementById("state").disabled=true;
+            document.getElementById("distri").disabled=true;
+        } else {
+            document.getElementById("address1").disable='false';
+            document.getElementById("address2").disable='false';
+            document.getElementById("address3").disable='false';
+            document.getElementById("taluka").disable='false';
+            document.getElementById("village").disable='false';
+            document.getElementById("zipcode").disable='false';
+            document.getElementById("city").disable='false';
+            document.getElementById("state").disabled=false;
+            document.getElementById("distri").disabled=false;
+        }
+    }
+
     $(document).ready(function () {
         $('#form_sample_3').validate({
             errorClass: "text-danger",
@@ -608,8 +627,6 @@ body.modal-open .modal .modal-dialog {
                 GSI: "required",
                 BPL: "required",
                 Aid: "required",
-                lateral: "required",
-                side: "required",
                 cause: "required",
                 subCause: "required",
                 repairCause: "required",
@@ -647,8 +664,6 @@ body.modal-open .modal .modal-dialog {
                 GSI: "Please enter GSI.",
                 BPL: "Please enter BPL.",
                 Aid: "Please enter Aid.",
-                lateral: "Please enter lateral.",
-                side: "Please enter side.",
                 cause: "Please enter cause.",
                 subCause: "Please enter sub cause.",
                 repairCause: "Please enter measurement.",
@@ -668,7 +683,7 @@ body.modal-open .modal .modal-dialog {
         })
     });
     function getTextBox(val) {
-        console.log("here", val)
+
         if(val == 1){
             $('#casekey').show();
         }else{
@@ -676,8 +691,39 @@ body.modal-open .modal .modal-dialog {
         }
 
     }
+    function getDocBox(val) {
+
+        if(val == 1){
+            $('#doclist').show();
+        }else{
+            $('#doclist').hide();
+        }
+
+    }
 	function searchCase(val) {
-		let searchText = $('#case_key').val();
+        document.getElementById("first_name").setAttribute('disabled', true);
+        document.getElementById("last_name").setAttribute('disabled', true);
+        document.getElementById("gender").setAttribute('disabled', true);
+        document.getElementById("dob").setAttribute('disabled', true);
+        document.getElementById("country").setAttribute('disabled', true);
+        document.getElementById("address1").setAttribute('disabled', true);
+        document.getElementById("address2").setAttribute('disabled', true);
+        document.getElementById("address3").setAttribute('disabled', true);
+        document.getElementById("taluka").setAttribute('disabled', true);
+        document.getElementById("village").setAttribute('disabled', true);
+        document.getElementById("city").setAttribute('disabled', true);
+        document.getElementById("district").setAttribute('disabled', true);
+        document.getElementById("zip").setAttribute('disabled', true);
+        document.getElementById("phone1").setAttribute('disabled', true);
+        document.getElementById("phone2").setAttribute('disabled', true);
+        document.getElementById("Aid").setAttribute('disabled', true);
+        document.getElementById("cause").setAttribute('disabled', true);
+        document.getElementById("subCause").setAttribute('disabled', true);
+        document.getElementById("lateral").setAttribute('disabled', true);
+        document.getElementById("side").setAttribute('disabled', true);
+        document.getElementById("GSI").setAttribute('disabled', true);
+        document.getElementById("BPL").setAttribute('disabled', true);
+        let searchText = $('#case_key').val();
 		$.ajax({
         url:"searchCaseAjax.php",
         type:"POST",
@@ -685,18 +731,18 @@ body.modal-open .modal .modal-dialog {
           searchText: searchText,
         },
         success:function(response) {
-			console.log(response);
             var obj = JSON.parse(response);
+            console.log(obj);
          $('#Aid').val(obj.aidrecom);
          $('#cause').val(obj.usercod);
-         $('#first_name').val(obj.username);
-            $('#last_name').val(obj.aidrecom);
+         $('#first_name').val(obj.firstname);
+            $('#last_name').val(obj.lastname);
             $('#gender').val(obj.gender);
             $('#dob').val(obj.userdob);
             $('#country').val(obj.country);
-            $('#address1').val(obj.address);
-            $('#address2').val(obj.address);
-            $('#address3').val(obj.address);
+            $('#address1').val(obj.address1);
+            $('#address2').val(obj.address2);
+            $('#address3').val(obj.address3);
             $('#taluka').val(obj.taluka);
             $('#village').val(obj.village);
             $('#city').val(obj.city);
@@ -711,13 +757,14 @@ body.modal-open .modal .modal-dialog {
             $('#lateral').val(obj.lateral);
             $('#side').val(obj.side);
             $('#subCause').val(obj.userscod);
-         console.log(obj.aidrecom);
+            $('#userid').val(obj.userid);
+            $('#case_num').val(obj.casekey);
        },
        error:function(){
         alert("error");
        }
 
-      });
+    });
 
     }
 </script>

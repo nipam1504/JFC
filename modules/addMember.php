@@ -110,11 +110,11 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
                                                 <select name="member_role" id="member_role" onchange="changetextbox()" class="form-control selectpicker" >
-                                                    <option>Member Role</option>
+                                                    <option value="member">Member</option>
                                                     <option value="admin">Admin</option>
                                                     <option value="measureby">Measurement By</option>
                                                     <option value="madeby">Made By</option>
-                                                    <option value="member">Data Entry Operator</option>
+                                                    <option value="dataentry">Data Entry Operator</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -177,12 +177,13 @@ body.modal-open .modal .modal-dialog {
 
     function changetextbox()
     {
-        if (document.getElementById("member_role").value === "measureby" ) {
-            document.getElementById("memberpassword").setAttribute('disabled', true);
 
-        } else {
-            document.getElementById("memberpassword").enable = 'true';
-          
+        if (document.getElementById("member_role").value == 'measureby' ) {
+            document.getElementById("memberpassword").disabled = true;
+
+        }
+        else{
+            document.getElementById("memberpassword").disabled = false;
         }
 
     }

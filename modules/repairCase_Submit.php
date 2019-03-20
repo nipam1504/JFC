@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'db-config.php';
-$firstName = $_REQUEST['first_name'];
+/*$firstName = $_REQUEST['first_name'];
 $lastName = $_REQUEST['last_name'];
 $gender = $_REQUEST['gender'];
 $dateofbirth = $_REQUEST['dob'];
@@ -11,9 +11,7 @@ $phone2 = $_REQUEST['phone1'];
 $caste = $_REQUEST['caste'];
 $gsi = $_REQUEST['GSI'];
 $bpl = $_REQUEST['BPL'];
-$aidtogive = $_REQUEST['Aid'];
 $case_key= $_REQUEST['case_key'];
-
 echo "('$firstName', '$lastName', '$gender', '$dateofbirth', '$phone1' , '$phone2', '$caste')";
 
 $sql = "INSERT INTO user (firstname, lastname, gender, userdob, userphone1, userphone2, caste)
@@ -91,11 +89,30 @@ if($bpl == 'yes'){
 else{
     $sqlbpl = "UPDATE user SET bpl = '0000000' WHERE userid='$currentuser'";
     $dbconnect->query($sqlbpl);
-}
+}*/
 
-if ($aidtogive == 'yes') {
- header('location:newCase2.php');
-}
-else{
- header('location:suggestion.php');
+$casekey=$_REQUEST["case_key"];
+$userid=$_REQUEST["userid"];
+$causeOfRepair=$_REQUEST["repairCause"];
+$repairBy=$_REQUEST["repairBy"];
+$repairDate=$_REQUEST["repairDate"];
+$repairWorkInfo=$_REQUEST["repairWorkInfo"];
+$repairMasterNum=$_REQUEST["repairMasterNumber"];
+$repairMasterDate=$_REQUEST["repairMasterDate"];
+$repairIDDOc   =$_REQUEST["proofyn"];
+
+echo "" ;
+$sql = "INSERT INTO repairdata (casekey,userid, cor, repairby, repairdate, repairwork, repairmasternum, repairmasterdate)
+VALUES ('$casekey','$userid', '$causeOfRepair', '$repairBy', '$repairDate', '$repairWorkInfo', '$repairMasterNum','$repairMasterDate')";
+if ($dbconnect->query($sql) === TRUE) {
+    $_SESSION['suc_msg'] = "Data submitted successfully.";
+    $_SESSION['suc_msg_type'] = "Success";
+    echo "True" ;
+} else {
+    echo "Issue  in query sql";
+
+    $_SESSION['suc_msg'] = "Something went wrong, Please try again.";
+    $_SESSION['suc_msg_type'] = "Error";
+    echo "$sql" ;
+
 }

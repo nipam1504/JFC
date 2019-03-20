@@ -92,6 +92,10 @@ body.modal-open .modal .modal-dialog {
 <div style="padding-top:10px; padding-right:300px; padding-left:300px; padding-bottom:30px;">
 <a class="btn btn-primary btn-block" href="viewCaseReport.php"> <span class="glyphicon glyphicon-wrench"></span> View All Case </a>
 </div>
+                                <div style="padding-top:10px; padding-right:300px; padding-left:300px; padding-bottom:30px;">
+                                    <a class="btn btn-primary btn-block" href="exportAllCases.php"> <span class="glyphicon glyphicon-download"></span> Export All Cases to Excel </a>
+                                </div>
+
                             </div>
                         </div>
                     </div>

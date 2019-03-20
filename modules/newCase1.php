@@ -4,12 +4,10 @@ require 'db-config.php';
 $sql = "Select * from state where status = 1";
 $result = $dbconnect->query($sql);
 $stateArray = array();
-while($row = $result->fetch_assoc()) 
+while($row = $result->fetch_assoc())
 {
-array_push($stateArray, $row);
+    array_push($stateArray, $row);
 }
-
-
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -110,9 +108,10 @@ body.modal-open .modal .modal-dialog {
                                 <!-- BEGIN FORM-->
                                 <?php
                                 include_once('SucFailMsg.php');
-							
-								
-								$campid = $_SESSION['camp_id']; 
+
+
+								$campid = $_SESSION['camp_id'];
+                                $loginuid =  $_SESSION['sess_id'];
 								$campQuery = "Select campName from campdetails where camp_id = $campid";
 								$campData = $dbconnect->query($campQuery);
 								$campName = "Base Camp";
@@ -120,17 +119,17 @@ body.modal-open .modal .modal-dialog {
 									$campName = $row1['campName'];
 								}
 								$_SESSION['camp_name'] = $campName;
-								
-							
-
+                                $caseKey = substr($_SESSION['camp_name'],0,3).$campid.$loginuid.date('dmy').(rand(999, 9999));
+                                $_SESSION['case_key'] = $caseKey;
                                 ?>
 								
 							
 									<div class="text-center control-label text-info">
                                         <h3>Your selected camp is <?php echo $campName;?> <h3>
 										
-                                    </div>							
-                                <form action="newCase1_Submit.php" id="form_sample_3"
+                                    </div>
+                                <div class="alert alert-info" role="alert">Case Key for this case is: <?php echo $caseKey;?></div>
+                                <form action="newCase1_Submit.php?case_key=<?php echo $caseKey;?>" id="form_sample_3"
                                       method="post" class="form-horizontal" enctype="multipart/form-data">
 
 
@@ -141,7 +140,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">First Name</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+                                                <input  name="first_name" placeholder="First Name" class="form-control"  type="text" maxlength="40">
                                             </div>
                                         </div>
                                     </div>
@@ -151,7 +150,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Last Name</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+                                                <input name="last_name" placeholder="Last Name" class="form-control"  type="text" maxlength="35">
                                             </div>
                                         </div>
                                     </div>
@@ -184,7 +183,6 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
                                                 <select name="country"  id="country" onChange="changetextbox();" class="form-control selectpicker" >
-                                                    <option>Country</option>
                                                     <option value="India">India</option>
                                                     <option value="Other">Other</option>
                                                 </select>
@@ -199,7 +197,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 1</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="address1" id="address1" placeholder="Address1" class="form-control" type="text">
+                                                <input name="address1" id="address1" placeholder="Address1" class="form-control" type="text" maxlength="75">
                                             </div>
                                         </div>
                                     </div>
@@ -207,7 +205,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 2</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="address2" placeholder="Address2" class="form-control" type="text">
+                                                <input name="address2" id="address2" placeholder="Address2" class="form-control" type="text" maxlength="75">
                                             </div>
                                         </div>
                                     </div>
@@ -216,7 +214,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 3</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="address3" placeholder="Address3" class="form-control" type="text">
+                                                <input name="address3" id="address3" placeholder="Address3" class="form-control" type="text" maxlength="75">
                                             </div>
                                         </div>
                                     </div>
@@ -225,7 +223,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Taluka</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="taluka" placeholder="Taluka" class="form-control" type="text">
+                                                <input name="taluka" id="taluka" placeholder="Taluka" class="form-control" type="text" maxlength="25">
                                             </div>
                                         </div>
                                     </div>
@@ -234,7 +232,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Village</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="village" placeholder="Village" class="form-control" type="text">
+                                                <input name="village" id="village" placeholder="Village" class="form-control" type="text" maxlength="25">
                                             </div>
                                         </div>
                                     </div>
@@ -244,7 +242,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">City</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="city" placeholder="city" class="form-control"  type="text">
+                                                <input name="city" id="sity" placeholder="city" class="form-control"  type="text" maxlength="25">
                                             </div>
                                         </div>
                                     </div>
@@ -256,7 +254,7 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
                                      
-                                                <select name="state" class="form-control selectpicker" onchange="getCity(this.value)">
+                                                <select name="state" id="state" class="form-control selectpicker" onchange="getCity(this.value)">
                                                     <option value=" " >Please select your state</option>
                                                     <?php
 													foreach($stateArray as $state){
@@ -275,7 +273,7 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
                                                 <div id ="district">
-												<select name="district" class="form-control selectpicker" onchange="getCity(this.value)">
+												<select name="district" id="distri" class="form-control selectpicker" onchange="getCity(this.value)">
                                                     <option value=" " >Please select your District</option>
                                                 </select>
 												</div>
@@ -292,7 +290,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Zip Code</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
+                                                <input name="zip" id="zipcode" placeholder="Zip Code" class="form-control"  maxlength="6" type="text" pattern="[0-9]">
                                             </div>
                                         </div>
                                     </div>
@@ -301,7 +299,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Phone #1</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="phone1" placeholder="1234567890" class="form-control" type="text">
+                                                <input name="phone1" placeholder="1234567890" class="form-control" type="text" maxlength="10">
                                             </div>
                                         </div>
                                     </div>
@@ -313,7 +311,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Phone #2</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="phone2" placeholder="1234567890" class="form-control" type="text">
+                                                <input name="phone2" placeholder="1234567890" class="form-control" type="text" maxlength="10">
                                             </div>
                                         </div>
                                     </div>
@@ -323,9 +321,10 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 selectContainer">
                                             <div class="input-group">
                                                 <select name="caste" class="form-control selectpicker" >
-                                                    <option>Caste</option>
                                                     <option>General</option>
                                                     <option>OBC</option>
+                                                    <option>SC</option>
+                                                    <option>ST</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -351,7 +350,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">GSI Card number</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input  name="gsi_num" id="gsinum" class="form-control"  type="text">
+                                                <input  name="gsi_num" id="gsinum" class="form-control"  type="text" maxlength="10">
                                             </div>
                                         </div>
                                     </div>
@@ -376,7 +375,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">BPL Card number</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input  name="bplnum" id="bplnum" class="form-control"  type="text">
+                                                <input  name="bplnum" id="bplnum" class="form-control"  type="text" maxlength="7">
                                             </div>
                                         </div>
                                     </div>
@@ -436,8 +435,24 @@ function changetextbox()
 {
     if (document.getElementById("country").value === "Other") {
         document.getElementById("address1").setAttribute('disabled', true);
+        document.getElementById("address2").setAttribute('disabled', true);
+        document.getElementById("address3").setAttribute('disabled', true);
+        document.getElementById("taluka").setAttribute('disabled', true);
+        document.getElementById("village").setAttribute('disabled', true);
+        document.getElementById("zipcode").setAttribute('disabled', true);
+        document.getElementById("sity").setAttribute('disabled', true);
+        document.getElementById("state").disabled=true;
+        document.getElementById("distri").disabled=true;
     } else {
         document.getElementById("address1").disable='false';
+        document.getElementById("address2").disable='false';
+        document.getElementById("address3").disable='false';
+        document.getElementById("taluka").disable='false';
+        document.getElementById("village").disable='false';
+        document.getElementById("zipcode").disable='false';
+        document.getElementById("sity").disable='false';
+        document.getElementById("state").disabled=false;
+        document.getElementById("distri").disabled=false;
     }
 }
 </script>

@@ -112,7 +112,7 @@ body.modal-open .modal .modal-dialog {
                                     <!-- Text input-->
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Name</label>
+                                        <label class="col-md-4 control-label">Search Reference</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
 
