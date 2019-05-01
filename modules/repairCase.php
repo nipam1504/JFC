@@ -140,10 +140,21 @@ body.modal-open .modal .modal-dialog {
                                         </div>
                                     </div>
 
+                                    <div class="form-group" id="casereason" style="display: none">
+                                        <label class="col-md-4 control-label" >BMVSS Case Data</label>
+                                        <div class="col-md-4 inputGroupContainer">
+                                            <div class="input-group">
+                                                <textarea name="case_data" placeholder="" id="case_data" class="form-control"  type="text" maxlength="100">
+                                                </textarea>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">First Name</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                            <input  name="first_name" id="first_name" placeholder="First Name" class="form-control">
+                                            <input  name="first_name" id="first_name" placeholder="First Name" class="form-control" type="text" maxlength="20">
                                         </div>
                                     </div>
 
@@ -153,7 +164,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Last Name</label>
                                         <div class="col-md-4 inputGroupContainer">
 
-                                                <input name="last_name" id="last_name" placeholder="Last Name" class="form-control">
+                                                <input name="last_name" id="last_name" placeholder="Last Name" class="form-control" type="text" maxlength="20">
 
                                         </div>
                                     </div>
@@ -200,7 +211,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 1</label>
                                         <div class="col-md-4 inputGroupContainer">
 
-                                                <input name="address1" id="address1" placeholder="Address1" class="form-control" type="text">
+                                                <input name="address1" id="address1" placeholder="Address1" class="form-control" type="text" maxlength="30">
 
                                         </div>
                                     </div>
@@ -208,7 +219,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 2</label>
                                         <div class="col-md-4 inputGroupContainer">
 
-                                                <input name="address2" id="address2" placeholder="Address2" class="form-control" type="text">
+                                                <input name="address2" id="address2" placeholder="Address2" class="form-control" type="text" maxlength="30">
 
                                         </div>
                                     </div>
@@ -217,7 +228,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Address 3</label>
                                         <div class="col-md-4 inputGroupContainer">
 
-                                                <input name="address3" id="address3" placeholder="Address3" class="form-control" type="text">
+                                                <input name="address3" id="address3" placeholder="Address3" class="form-control" type="text" maxlength="30">
 
                                         </div>
                                     </div>
@@ -226,7 +237,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Taluka</label>
                                         <div class="col-md-4 inputGroupContainer">
 
-                                                <input name="taluka" id="taluka" placeholder="Taluka" class="form-control" type="text">
+                                                <input name="taluka" id="taluka" placeholder="Taluka" class="form-control" type="text" maxlength="20">
 
                                         </div>
                                     </div>
@@ -235,7 +246,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">Village</label>
                                         <div class="col-md-4 inputGroupContainer">
 
-                                                <input name="village" id="village" placeholder="Village" class="form-control" type="text">
+                                                <input name="village" id="village" placeholder="Village" class="form-control" type="text" maxlength="20">
 
                                         </div>
                                     </div>
@@ -245,7 +256,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">City</label>
                                         <div class="col-md-4 inputGroupContainer">
 
-                                                <input name="city" id="city" placeholder="city" class="form-control"  type="text">
+                                                <input name="city" id="city" placeholder="city" class="form-control"  type="text" maxlength="20">
 
                                         </div>
                                     </div>
@@ -288,7 +299,7 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 inputGroupContainer">
 
 
-                                                <input name="zip" id="zip" placeholder="Zip Code" class="form-control"  type="text">
+                                                <input name="zip" id="zip" placeholder="Zip Code" class="form-control"  type="text" maxlength="6" pattern="[0-9]">
 
                                         </div>
                                     </div>
@@ -298,7 +309,7 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 inputGroupContainer">
 
 
-                                                <input name="phone1" id="phone1" placeholder="1234567890" class="form-control" type="text">
+                                                <input name="phone1" id="phone1" placeholder="1234567890" class="form-control" type="text" maxlength="10" pattern="[0-9]">
 
                                         </div>
                                     </div>
@@ -309,7 +320,7 @@ body.modal-open .modal .modal-dialog {
                                     <div class="form-group">
                                         <label class="col-md-4 control-label">Phone #2</label>
                                         <div class="col-md-4 inputGroupContainer">
-                                                <input name="phone2" id="phone2" placeholder="1234567890" class="form-control" type="text">
+                                                <input name="phone2" id="phone2" placeholder="1234567890" class="form-control" type="text" maxlength="10" pattern="[0-9]">
                                         </div>
                                     </div>
 
@@ -331,11 +342,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">GSI</label>
 
                                             <div class="col-md-4 inputGroupContainer">
-
-
-                                                    <input name="gsi" id="GSI" class="form-control" type="text"/>
-
-
+                                                    <input name="GSI" id="GSI" class="form-control" type="text" maxlength="7"/>
                                         </div>
                                     </div>
 
@@ -345,7 +352,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label">BPL Card</label>
 
                                             <div class="col-md-4 inputGroupContainer">
-                                                    <input name="BPL" id="BPL" class="form-control" type="text"/>
+                                                    <input name="BPL" id="BPL" class="form-control" type="text" maxlength="10" pattern="[0-9]"/>
                                             </div>
 
                                     </div>
@@ -372,22 +379,6 @@ body.modal-open .modal .modal-dialog {
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label">Lateral Type</label>
-                                        <div class="col-md-4">
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="lateral" id="lateral" value="uni" /> Unilateral
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="lateral" id="lateral" value="bi" /> Bilateral
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
                                         <label class="col-md-4 control-label">Side</label>
                                         <div class="col-md-4">
                                             <div class="radio">
@@ -408,27 +399,8 @@ body.modal-open .modal .modal-dialog {
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
                                                 <select name="cause" id="cause" class="form-control " >
-                                                    <option value=" " > </option>
                                                     <option>Amputation</option>
                                                     <option>Non-amputation</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label">Sub-Cause of disability</label>
-                                        <div class="col-md-4 inputGroupContainer">
-                                            <div class="input-group">
-                                                <select name="subCause" id="subCause" class="form-control " >
-                                                    <option value=" " > </option>
-                                                    <option>Diabetes</option>
-                                                    <option>Leprosy</option>
-                                                    <option>Traumatic / Accident</option>
-                                                    <option>Congenital</option>
-                                                    <option>Other Disease</option>
-                                                    <option>Polio</option>
-                                                    <option>Cerebral Palsy</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -526,7 +498,7 @@ body.modal-open .modal .modal-dialog {
                                         <label class="col-md-4 control-label" >Repair Master number</label>
                                         <div class="col-md-4 inputGroupContainer">
                                             <div class="input-group">
-                                                <input name="repairMasterNumber" placeholder=" " class="form-control"  type="text">
+                                                <input name="repairMasterNumber" placeholder=" " class="form-control"  type="text" maxlength="20"/>
                                             </div>
                                         </div>
                                     </div>
@@ -686,8 +658,10 @@ body.modal-open .modal .modal-dialog {
 
         if(val == 1){
             $('#casekey').show();
+            $('#casereason').hide();
         }else{
             $('#casekey').hide();
+            $('#casereason').show();
         }
 
     }
@@ -712,17 +686,17 @@ body.modal-open .modal .modal-dialog {
         document.getElementById("taluka").setAttribute('disabled', true);
         document.getElementById("village").setAttribute('disabled', true);
         document.getElementById("city").setAttribute('disabled', true);
-        document.getElementById("district").setAttribute('disabled', true);
+        document.getElementById("district").setAttribute('hidden', true);
+        document.getElementById("state").setAttribute('disabled', true);
         document.getElementById("zip").setAttribute('disabled', true);
         document.getElementById("phone1").setAttribute('disabled', true);
         document.getElementById("phone2").setAttribute('disabled', true);
         document.getElementById("Aid").setAttribute('disabled', true);
         document.getElementById("cause").setAttribute('disabled', true);
-        document.getElementById("subCause").setAttribute('disabled', true);
-        document.getElementById("lateral").setAttribute('disabled', true);
         document.getElementById("side").setAttribute('disabled', true);
         document.getElementById("GSI").setAttribute('disabled', true);
         document.getElementById("BPL").setAttribute('disabled', true);
+        document.getElementById("caste").setAttribute('disabled', true);
         let searchText = $('#case_key').val();
 		$.ajax({
         url:"searchCaseAjax.php",
@@ -754,9 +728,6 @@ body.modal-open .modal .modal-dialog {
             $('#GSI').val(obj.gsi);
             $('#caste').val(obj.caste);
             $('#BPL').val(obj.bpl);
-            $('#lateral').val(obj.lateral);
-            $('#side').val(obj.side);
-            $('#subCause').val(obj.userscod);
             $('#userid').val(obj.userid);
             $('#case_num').val(obj.casekey);
        },
